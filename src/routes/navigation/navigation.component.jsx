@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { Outlet, Link } from "react-router-dom"
 import { ReactComponent as CrwLogo } from "../../assets/crown.svg"
 

@@ -24,13 +24,8 @@ export const removeCartItem = (cartItems, cartItemToRemove) => {
   )
 }
 
-export const clearCartItem = (cartItems, cartItemToClear) => {
-  const existingCartItem = cartItems.find((cartItem) => cartItem.id === cartItemToClear.id)
-
-  if (existingCartItem.quantity === 1) {
-    return cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id)
-  }
-}
+export const clearCartItem = (cartItems, cartItemToClear) =>
+  cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id)
 
 export const CartContext = createContext({
   isCartOpen: false,

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Reactjs Clothing Store by Chay Wei",
+  "short_name": "Reactjs Clothing Store",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,14 +8,16 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "reactjs-clothing-1192x192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "maskable"
     },
     {
-      "src": "logo512.png",
+      "src": "reactjs-clothing-512x512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
   "start_url": ".",

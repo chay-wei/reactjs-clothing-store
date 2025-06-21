@@ -1,12 +1,16 @@
 import styled from "styled-components"
 
 export const CheckoutContainer = styled.div`
-  width: 55%;
+  width: 100%;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
+
+  @media screen and (min-width: 768px) {
+    width: 55%;
+  }
 `
 
 export const CheckoutHeader = styled.div`

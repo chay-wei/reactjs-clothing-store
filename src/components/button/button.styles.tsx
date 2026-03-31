@@ -1,34 +1,28 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 import { SpinnerContainer } from "../spinner/spinner.styles"
 
-export const BaseButton = styled.button`
+import { BUTTON_VARIANT } from "./button.component"
+
+const baseButtonStyles = css`
   min-width: 165px;
   width: auto;
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
-  font-size: 15px;
-  background-color: black;
-  color: white;
+  padding: 0 35px;
   text-transform: uppercase;
   font-family: "Open Sans";
   font-weight: bolder;
+  font-size: 15px;
   border: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-  }
 `
 
-export const GoogleSignInButton = styled(BaseButton)`
+const googleStyles = css`
   background-color: #4285f4;
   color: white;
 
@@ -38,7 +32,7 @@ export const GoogleSignInButton = styled(BaseButton)`
   }
 `
 
-export const InvertedButton = styled(BaseButton)`
+const invertedStyles = css`
   background-color: white;
   color: black;
   border: 1px solid black;
@@ -48,6 +42,32 @@ export const InvertedButton = styled(BaseButton)`
     color: white;
     border: none;
   }
+`
+
+const getButtonStyles = (variant = BUTTON_VARIANT.base) => {
+  switch (variant) {
+    case BUTTON_VARIANT.google:
+      return googleStyles
+    case BUTTON_VARIANT.inverted:
+      return invertedStyles
+
+    default:
+      return css`
+        background-color: black;
+        color: white;
+
+        &:hover {
+          background-color: white;
+          color: black;
+          border: 1px solid black;
+        }
+      `
+  }
+}
+
+export const StyledButton = styled.button<{ variant?: BUTTON_VARIANT }>`
+  ${baseButtonStyles}
+  ${({ variant }) => getButtonStyles(variant)}
 `
 
 export const ButtonSpinner = styled(SpinnerContainer)`

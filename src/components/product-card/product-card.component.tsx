@@ -5,7 +5,7 @@ import { selectCartItems } from "../../store/cart/cart.selector"
 import { addItemToCart } from "../../store/cart/cart.action"
 import { CategoryItem } from "../../store/categories/categories.types"
 
-import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component"
+import Button, { BUTTON_VARIANT } from "../button/button.component"
 
 import {
   ProductCartContainer,
@@ -32,10 +32,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
         <Name>{name}</Name>
         <Price>{price}</Price>
       </Footer>
-      <Button
-        buttonType={BUTTON_TYPE_CLASSES.inverted}
-        onClick={addProductToCart}
-      >
+      <Button variant={BUTTON_VARIANT.inverted} onClick={addProductToCart}>
         Add to cart
       </Button>
     </ProductCartContainer>

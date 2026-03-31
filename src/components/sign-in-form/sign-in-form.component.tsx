@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 import { AuthError, AuthErrorCodes } from "firebase/auth"
 
 import FormInput from "../form-input/form-input.component"
-import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component"
+import Button, { BUTTON_VARIANT } from "../button/button.component"
 
 import { SignInContainer, ButtonsContainer } from "./sign-in-form.styles"
 import {
@@ -65,6 +65,7 @@ const SignInForm = () => {
         <FormInput
           label="Email"
           otherProps={{
+            id: "signin-email",
             type: "email",
             required: true,
             onChange: handleChange,
@@ -76,6 +77,7 @@ const SignInForm = () => {
         <FormInput
           label="Password"
           otherProps={{
+            id: "signin-password",
             type: "password",
             required: true,
             onChange: handleChange,
@@ -87,7 +89,7 @@ const SignInForm = () => {
           <Button type="submit">Sign In</Button>
           <Button
             type="button"
-            buttonType={BUTTON_TYPE_CLASSES.google}
+            variant={BUTTON_VARIANT.google}
             onClick={signInWithGoogle}
           >
             Google sign in

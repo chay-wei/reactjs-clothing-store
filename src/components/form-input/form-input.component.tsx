@@ -8,11 +8,14 @@ type FormInputProps = {
 }
 
 const FormInput: FC<FormInputProps> = ({ label, otherProps }) => {
+  const inputID = otherProps.id || otherProps.name
+
   return (
     <Group>
-      <Input {...otherProps} />
+      <Input id={inputID} {...otherProps} />
       {label && (
         <FormInputLable
+          htmlFor={inputID}
           shrink={Boolean(
             otherProps.value &&
               typeof otherProps.value === "string" &&
